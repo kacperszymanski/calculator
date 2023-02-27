@@ -1,0 +1,169 @@
+<div id="calculatorWrap">
+    <table id="calculatorContainer">
+        <tr>
+            <td colspan="4"><input id="display" type="text">numbers></td>
+        </tr>
+        <td colspan="2"><button>CLEAR</button></td>
+        <td colspan="2"><button>DELETE</button></td>
+        <tr>
+            <td><button>7</button></td>
+            <td><button>8</button></td>
+            <td><button>9</button></td>
+            <td><button>÷</button></td>
+        </tr>
+        <tr>
+            <td><button>4</button></td>
+            <td><button>5</button></td>
+            <td><button>6</button></td>
+            <td><button>x</button></td>
+        </tr>
+        <tr>
+            <td><button>1</button></td>
+            <td><button>2</button></td>
+            <td><button>3</button></td>
+            <td><button>-</button></td>
+        </tr>
+        <tr>
+            <td><button>.</button></td>
+            <td><button>0</button></td>
+            <td><button>=</button></td>
+            <td><button>+</button></td>
+        </tr>
+        <tr></tr>
+    </table>
+</div>
+
+<!-- 
+<div id="cs_calculatorWrap">
+    <form action="javascript:void(0);" name="cs_calculator_form" id="cs_calculator_form" autocomplete="off">
+        <table class="cs_calculator_container" role="presentation">
+            <tbody>
+                <tr>
+                    <td colspan="4">
+                        <input type="text" class="cs_window" name="cs_display" id="cs_display" value="0"
+                            inputmode="decimal" aria-label="number display" autofocus="">
+                    </td>
+                </tr>
+                <tr class="cs_memory_row">
+                    <td>
+                        <button class="cs_button cs_memory" name="cs_m_clear" onmousedown="cs_memory_clear()"
+                            title="Clear the memory">mc</button>
+                    </td>
+                    <td>
+                        <button class="cs_button cs_memory" name="cs_m_recall" onmousedown="cs_memory_recall()"
+                            title="Recall the value stored in memory and display it">mr</button>
+                    </td>
+                    <td>
+                        <button class="cs_button cs_memory" name="cs_m_minus" onmousedown="cs_memory_minus()"
+                            title="Subtract the displayed value from the memory">m−</button>
+                    </td>
+                    <td>
+                        <button class="cs_button cs_memory" name="cs_m_plus" onmousedown="cs_memory_plus()"
+                            title="Add the displayed value to the memory">m+</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="cs_button cs_function" name="cs_clear_display" id="clear_display"
+                            onmousedown="cs_display_clear()"
+                            title="CE is Clear Entry; AC is All Clear; Press once to clear current entry, press twice to clear all">AC</button>
+                    </td>
+                    <td>
+                        <button class="cs_button cs_function" name="cs_root2" onmousedown="cs_func('squareroot')"
+                            title="Calculate the square root of the displayed value">√x</button>
+                    </td>
+                    <td>
+                        <button class="cs_button cs_function" name="cs_percent" onmousedown="cs_func('percent')"
+                            title="Enter displayed value as a percentage and convert to its decimal equivalent">%</button>
+                    </td>
+                    <td>
+                        <button class="cs_button cs_operator" name="cs_divide" onmousedown="cs_enterOperator('/')"
+                            title="Divide (press /)">÷</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="cs_button cs_number" name="cs_seven" onmousedown="cs_enterValue('7')">7</button>
+                    </td>
+                    <td>
+                        <button class="cs_button cs_number" name="cs_eight" onmousedown="cs_enterValue('8')">8</button>
+                    </td>
+                    <td>
+                        <button class="cs_button cs_number" name="cs_nine" onmousedown="cs_enterValue('9')">9</button>
+                    </td>
+                    <td>
+                        <button class="cs_button cs_operator" name="cs_multiply" onmousedown="cs_enterOperator('*')"
+                            title="Multiply (press ×)">×</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="cs_button cs_number" name="cs_four" onmousedown="cs_enterValue('4')">4</button>
+                    </td>
+                    <td>
+                        <button class="cs_button cs_number" name="cs_five" onmousedown="cs_enterValue('5')">5</button>
+                    </td>
+                    <td>
+                        <button class="cs_button cs_number" name="cs_six" onmousedown="cs_enterValue('6')">6</button>
+                    </td>
+                    <td>
+                        <button class="cs_button cs_operator" name="cs_subtract" onmousedown="cs_enterOperator('-')"
+                            title="Subtract (press -)">−</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="cs_button cs_number" name="cs_one" onmousedown="cs_enterValue('1')">1</button>
+                    </td>
+                    <td>
+                        <button class="cs_button cs_number" name="cs_two" onmousedown="cs_enterValue('2')">2</button>
+                    </td>
+                    <td>
+                        <button class="cs_button cs_number" name="cs_three" onmousedown="cs_enterValue('3')">3</button>
+                    </td>
+                    <td>
+                        <button class="cs_button cs_operator" name="cs_add" onmousedown="cs_enterOperator('+')"
+                            title="Add (press +)">+</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="cs_button cs_number" name="cs_zero" onmousedown="cs_enterValue('0')">0</button>
+                    </td>
+                    <td>
+                        <button class="cs_button cs_number" name="cs_decimal"
+                            onmousedown="cs_enterValue('.')">.</button>
+                    </td>
+                    <td>
+                        <button class="cs_button cs_number" name="cs_negate" onmousedown="cs_func('negate')"
+                            title="Negate the displayed value">+/−</button>
+                    </td>
+                    <td>
+                        <button class="cs_button cs_execute" name="cs_equal" onmousedown="cs_enterOperator('=')"
+                            title="Execute calculation (press =)">=</button>
+                    </td>
+                </tr>
+                <tr class="cs_function_row_0">
+                    <td>
+                        <button class="cs_button cs_function" name="cs_pi" onmousedown="cs_func('pi')"
+                            title="Display the value of Pi">π</button>
+                    </td>
+                    <td>
+                        <button class="cs_button cs_function" name="cs_power" onmousedown="cs_enterOperator('pow')"
+                            title="Raise x to the power of y">x<sup>y</sup>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="cs_button cs_function" name="cs_round2" onmousedown="cs_func('r2')"
+                            title="Round display to 2 decimal places">R2</button>
+                    </td>
+                    <td>
+                        <button class="cs_button cs_function" name="cs_round0" onmousedown="cs_func('r0')"
+                            title="Round display to 0 decimal places">R0</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <input type="hidden" name="cs_memory_val" id="cs_memory_val" value="0">
+    </form>
+</div> -->
