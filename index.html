@@ -1,37 +1,58 @@
-<div id="calculatorWrap">
-    <table id="calculatorContainer">
-        <tr>
-            <td colspan="4"><input id="display" type="text">numbers></td>
-        </tr>
-        <td colspan="2"><button>CLEAR</button></td>
-        <td colspan="2"><button>DELETE</button></td>
-        <tr>
-            <td><button>7</button></td>
-            <td><button>8</button></td>
-            <td><button>9</button></td>
-            <td><button>÷</button></td>
-        </tr>
-        <tr>
-            <td><button>4</button></td>
-            <td><button>5</button></td>
-            <td><button>6</button></td>
-            <td><button>x</button></td>
-        </tr>
-        <tr>
-            <td><button>1</button></td>
-            <td><button>2</button></td>
-            <td><button>3</button></td>
-            <td><button>-</button></td>
-        </tr>
-        <tr>
-            <td><button>.</button></td>
-            <td><button>0</button></td>
-            <td><button>=</button></td>
-            <td><button>+</button></td>
-        </tr>
-        <tr></tr>
-    </table>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="calculatorWrap">
+        <table id="calculatorContainer">
+            <tr>
+                <td colspan="4">
+                    <div id="displayLastOperation" type="text"></div>
+                    <div id="displayCurrentOperation" type="text">0</div>
+                </td>
+            </tr>
+            <td colspan="2"><button id="clear">CLEAR</button></td>
+            <td colspan="2"><button>DELETE</button></td>
+            <tr>
+                <td><button data-type="number" data-number>7</button></td>
+                <td><button data-type="number" data-number>8</button></td>
+                <td><button data-type="number" data-number>9</button></td>
+                <td><button data-operator>÷</button></td>
+            </tr>
+            <tr>
+                <td><button data-type="number" data-number>4</button></td>
+                <td><button data-type="number" data-number>5</button></td>
+                <td><button data-type="number" data-number>6</button></td>
+                <td><button data-operator>x</button></td>
+            </tr>
+            <tr>
+                <td><button data-type="number" data-number>1</button></td>
+                <td><button data-type="number" data-number>2</button></td>
+                <td><button data-type="number" data-number>3</button></td>
+                <td><button data-operator>-</button></td>
+            </tr>
+            <tr>
+                <td><button>.</button></td>
+                <td><button data-type="number" data-number>0</button></td>
+                <td><button>=</button></td>
+                <td><button data-operator>+</button></td>
+            </tr>
+            <tr></tr>
+        </table>
+    </div>
+
+</body>
+
+</html>
+
 
 <!-- 
 <div id="cs_calculatorWrap">
