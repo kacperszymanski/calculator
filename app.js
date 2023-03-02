@@ -2,7 +2,7 @@
 const DEFAULT_VALUE = 0
 
 let firstValue = DEFAULT_VALUE
-let secondValue = ''
+let secondValue = 0
 let operator = ''
 
 const displayLastOperation = document.getElementById('displayLastOperation')
@@ -26,31 +26,40 @@ operatorButtons.forEach((button) =>
 
 function setOperation(operation) {
     operator = operation
+    console.log(operator)
+    console.log(secondValue)
+    console.log(firstValue)
+    operate(operator, firstValue, secondValue)
+    firstValue = DEFAULT_VALUE
+    displayLastOperation.textContent = `${secondValue} ${operation}`
+    displayCurrentOperation.textContent = firstValue
+
 }
 
 
-// firstValue = document.getElementById('displayCurrentOperation').textContent
-// if (operation === '+') {
-//     displayLastOperation.textContent = `${firstValue} ${operation}`
+function operate(operator, firstValue, secondValue) {
+    if (operator === '+') {
 
-
-function operate(operation, firstValue, secondValue) { }
+        return secondValue = firstValue + secondValue
+    }
+}
 
 function appendNumber(number) {
     if (displayCurrentOperation.textContent === '0') {
         displayCurrentOperation.textContent = ''
     }
-    displayCurrentOperation.textContent += number
+    firstValue = displayCurrentOperation.textContent += number
 }
 
 
 function clearDisplay() {
     firstValue = DEFAULT_VALUE
     displayCurrentOperation.textContent = DEFAULT_VALUE
+    displayLastOperation.textContent = ''
 }
 
 function add(a, b) {
-    return a + b
+    secondValue = a + b
 }
 
 function substract(a, b) {
