@@ -1,0 +1,111 @@
+/* Calculator styles */
+#calculatorWrap {
+    width: 400px;
+    margin: 50px auto;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+  }
+  
+  #calculatorContainer {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  
+  #calculatorContainer td {
+    width: 25%;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    position: relative;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  #calculatorContainer td:hover {
+    background-color: #ddd;
+  }
+  
+  #calculatorContainer td:active {
+    top: 1px;
+    box-shadow: none;
+  }
+  
+  #calculatorContainer td:after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: -1;
+    transform: perspective(10px) rotateX(2deg);
+  }
+  
+  #calculatorContainer td:before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: -1;
+    transform: perspective(10px) rotateY(-2deg);
+  }
+  
+  #calculatorContainer tr:first-child td,
+  #calculatorContainer tr:first-child td div {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: none;
+  }
+  
+  #calculatorContainer tr:last-child td {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  #calculatorContainer td button {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #displayLastOperation,
+  #displayCurrentOperation {
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    text-align: right;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  
+  #displayLastOperation:before,
+  #displayCurrentOperation:before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: -1;
+    transform: perspective(10px) rotateX(2deg);
+  }
+  
