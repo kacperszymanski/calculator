@@ -1,77 +1,123 @@
-/* Main calculator container */
+/* CSS for Calculator */
 #calculatorWrap {
-  width: 320px;
-  margin: 0 auto;
-  background-color: #222;
+  width: 250px;
+  margin: 100px auto;
+  padding: 10px;
+  background-color: #EEE;
   border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
 }
 
-/* Calculator form */
-#calculatorForm {
-  display: flex;
+.calculatorDisplay{
   flex-direction: column;
+  border-radius: 10px;
+  margin: 10px;
+  background: white;
+  text-align: right;
 }
 
-/* Calculator display */
 #displayLastOperation {
-  font-size: 1.5em;
-  color: #aaa;
-  text-align: right;
-  margin-bottom: 5px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #888;
+  
+  padding: 10px 10px 0 10px
+  
 }
 
 #displayCurrentOperation {
-  font-size: 2.5em;
-  color: #fff;
-  text-align: right;
-  margin-bottom: 15px;
+  font-size: 36px;
+  font-weight: bold;
+  padding: 0 10px 10px 10px
 }
 
-/* Calculator buttons */
 .calculatorRow {
-  display: flex;
-  justify-content: space-between;
   margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 button {
-  background-color: #555;
-  color: #fff;
+  width: auto;
+  height: 50px;
+  margin: 0 5px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFF;
+  background-color: #333;
   border: none;
   border-radius: 5px;
-  font-size: 1.2em;
-  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  transition: all 0.2s ease-in-out;
 }
 
 button:hover {
-  background-color: #666;
+  background-color: #444;
 }
 
-button:active {
-  transform: translateY(2px);
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #FFF, 0 0 0 4px #333;
 }
 
-/* Operator buttons */
-[data-operationType] {
-  background-color: #f60;
+button[data-type="number"],
+button[data-action="decimal"] {
+  background-color: #EEE;
+  color: #333;
+  width:50px
+
 }
 
-[data-operationType]:hover {
-  background-color: #ff812d;
+button[data-type="number"]:hover,
+button[data-action="decimal"]:hover {
+  background-color: #DDD;
 }
 
-[data-operationType]:active {
-  transform: translateY(2px);
+button[data-type="number"]:focus,
+button[data-action="decimal"]:focus {
+  box-shadow: 0 0 0 2px #333, 0 0 0 4px #EEE;
 }
 
-/* Clear and Delete buttons */
-#clearButton {
-  background-color: #f44336;
+button[data-operationType] {
+  background-color: #FFC107;
+  width: 50px;
 }
 
-#clearButton:hover {
+button[data-operationType]:hover {
+  background-color: #FFB300;
+}
+
+button[data-operationType]:focus {
+  box-shadow: 0 0 0 2px #FFF, 0 0 0 4px #FFC107;
+}
+
+#clearButton,
+#delete {
+  background-color: #F44336;
+  width: 110px
+  
+}
+
+#clearButton:hover,
+#delete:hover {
+  background-color: #E53935;
+}
+
+#clearButton:focus,
+#delete:focus {
+  box-shadow: 0 0 0 2px #FFF, 0 0 0 4px #F44336;
+}
+
+#equal {
+  background-color: #4CAF50;
+  width: 50px;
+}
+
+#equal:hover {
+  background-color: #388E3C;
+}
+
+#equal:focus {
+  box-shadow: 0 0 0 2px #FFF, 0 0 0 4px #4CAF50;
+}
