@@ -31,4 +31,4 @@ Error Handling
 The calculator will display an error message if the user attempts to divide by zero.
 
 Credits
-This calculator was created by [Your Name]. Feel free to use it for your own projects or modify it as needed.
+This calculator was created by Kacper Szymański. Feel free to use it for your own projects or modify it as needed.
