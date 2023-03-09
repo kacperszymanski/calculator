@@ -1,85 +1,79 @@
 
-const DEFAULT_VALUE = 0
+const DEFAULT_VALUE = 0;
 
-let firstValue = DEFAULT_VALUE
-let secondValue = 0
-let operator = ''
+let currentNumber = DEFAULT_VALUE;
+let previousNumber = 0;
+let operationType = '';
 
-const displayLastOperation = document.getElementById('displayLastOperation')
-const displayCurrentOperation = document.getElementById('displayCurrentOperation')
-const clear = document.getElementById('clear')
-const numberButtons = document.querySelectorAll('[data-number]')
-const operatorButtons = document.querySelectorAll('[data-operator]')
+const displayLastOperation = document.getElementById('displayLastOperation');
+const displayCurrentOperation = document.getElementById('displayCurrentOperation');
+const clearButton = document.getElementById('clearButton');
+const numberButtons = document.querySelectorAll('[data-number]');
+const operatorButtons = document.querySelectorAll('[data-operationType]');
+const equalButton = document.getElementById('equal');
+const decimalButton = document.querySelector('[data-action="decimal"]');
+const deleteButton = document.getElementById('delete');
 
+clearButton.addEventListener('click', clearDisplay);
+equalButton.addEventListener('click', calculate);
+deleteButton.addEventListener('click', deleteDigit);
 
-clear.onclick = () => clearDisplay()
+numberButtons.forEach(button => button.addEventListener('click', () => appendDigit(button.textContent)));
+operatorButtons.forEach(button => button.addEventListener('click', () => setOperation(button.textContent)));
+decimalButton.addEventListener('click', () => appendDigit('.'));
 
-
-
-numberButtons.forEach((button) =>
-    button.addEventListener('click', () => appendNumber(button.textContent))
-)
-
-operatorButtons.forEach((button) =>
-    button.addEventListener('click', () => setOperation(button.textContent))
-)
-
-function setOperation(operation) {
-    operator = operation
-    console.log(operator)
-    console.log(secondValue)
-    console.log(firstValue)
-    firstValue = DEFAULT_VALUE
-    displayLastOperation.textContent = `${secondValue} ${operation}`
-    displayCurrentOperation.textContent = firstValue
-
+function setOperation(operator) {
+    if (operationType && previousNumber) {
+        currentNumber = operate(operationType, previousNumber, currentNumber);
+        displayCurrentOperation.textContent = currentNumber;
+    }
+    operationType = operator;
+    previousNumber = currentNumber;
+    currentNumber = DEFAULT_VALUE;
+    displayLastOperation.textContent = `${previousNumber} ${operationType}`;
+    displayCurrentOperation.textContent = DEFAULT_VALUE;
 }
 
-
-function operate(operator, firstValue, secondValue) {
-    if (operator === '+') {
-        
-
+function operate(operator, operand1, operand2) {
+    switch (operator) {
+        case '+': return parseFloat(operand1) + parseFloat(operand2);
+        case '-': return parseFloat(operand1) - parseFloat(operand2);
+        case 'x': return parseFloat(operand1) * parseFloat(operand2);
+        case '÷': return parseFloat(operand1) / parseFloat(operand2);
+        default: return DEFAULT_VALUE;
     }
 }
 
-function appendNumber(number) {
+function calculate() {
+    if (operationType && previousNumber) {
+        const result = operate(operationType, previousNumber, currentNumber);
+        displayCurrentOperation.textContent = result;
+        displayLastOperation.textContent = `${previousNumber} ${operationType} ${currentNumber} = ${result}`;
+        previousNumber = DEFAULT_VALUE;
+        currentNumber = result;
+        operationType = '';
+    }
+}
+
+function appendDigit(digit) {
     if (displayCurrentOperation.textContent === '0') {
-        displayCurrentOperation.textContent = ''
+        displayCurrentOperation.textContent = '';
     }
-    firstValue = displayCurrentOperation.textContent += number
+    if (digit === '.' && currentNumber.includes('.')) {
+        return;
+    }
+    currentNumber = displayCurrentOperation.textContent += digit;
 }
 
+function deleteDigit() {
+    displayCurrentOperation.textContent = displayCurrentOperation.textContent.slice(0, -1);
+    currentNumber = parseFloat(displayCurrentOperation.textContent) || DEFAULT_VALUE;
+}
 
 function clearDisplay() {
-    firstValue = DEFAULT_VALUE
-    displayCurrentOperation.textContent = DEFAULT_VALUE
-    displayLastOperation.textContent = ''
-}
-
-function add(a, b) {
-    secondValue = a + b
-}
-
-function substract(a, b) {
-    return a - b
-}
-
-function multiply(a, b) {
-    return a * b
-}
-
-function divide(a, b) {
-    return a / b
-}
-
-function operate(operator, firstNum, secondNum) {
-    if (operator === 'add') { add(firstNum, secondNum) }
-    else if (operator === 'substract') { substract(firstNum, secondNum) }
-    else if (operator === 'multiply') { multiply(firstNum, secondNum) }
-    else if (operator === 'divide') { divide(firstNum, secondNum) }
-}
-
-window.onload = () => {
-
+    currentNumber = DEFAULT_VALUE;
+    previousNumber = DEFAULT_VALUE;
+    operationType = '';
+    displayCurrentOperation.textContent = DEFAULT_VALUE;
+    displayLastOperation.textContent = DEFAULT_VALUE;
 }
