@@ -73,7 +73,7 @@ function deleteDigit() {
 function clearDisplay() {
     currentNumber = DEFAULT_VALUE;
     previousNumber = DEFAULT_VALUE;
-    operationType = '';
+    operationType = 0;
     displayCurrentOperation.textContent = DEFAULT_VALUE;
     displayLastOperation.textContent = DEFAULT_VALUE;
 }
