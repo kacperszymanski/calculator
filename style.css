@@ -26,6 +26,7 @@ body {
   text-align: right;
   box-shadow: 5px 5px 10px #141414,
     -5px -5px 10px #383838;
+  overflow: auto;
 }
 
 #displayLastOperation {
