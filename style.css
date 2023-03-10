@@ -1,29 +1,37 @@
+body {
+  background-color: #262626;
+}
+
 /* CSS for Calculator */
 #calculatorWrap {
   width: 250px;
   margin: 100px auto;
   padding: 10px;
-  background-color: #EEE;
+  background: linear-gradient(145deg, #222222, #292929);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  
+  color: #F2F2F2;
+  box-shadow: 10px 10px 20px #141414,
+    -10px -10px 20px #383838;
+  text-shadow: 5px 5px 10px #141414,
+    -5px -5px 10px #383838;
 }
 
-.calculatorDisplay{
+.calculatorDisplay {
   flex-direction: column;
   border-radius: 10px;
   margin: 10px;
-  background: white;
+  background: linear-gradient(145deg, #222222, #292929);
   text-align: right;
+  box-shadow: 5px 5px 10px #141414,
+    -5px -5px 10px #383838;
 }
 
 #displayLastOperation {
   font-size: 24px;
   font-weight: bold;
   color: #888;
-  
   padding: 10px 10px 0 10px
-  
 }
 
 #displayCurrentOperation {
@@ -44,80 +52,22 @@ button {
   margin: 0 5px;
   font-size: 24px;
   font-weight: bold;
-  color: #FFF;
-  background-color: #333;
+  background: linear-gradient(145deg, #222222, #292929);
   border: none;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 5px 15px #131313,
+    -5px -5px 15px #393939;
   cursor: pointer;
-}
-
-button:hover {
-  background-color: #444;
+  color: #F2F2F2;
+  width: 50px;
 }
 
 button:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #FFF, 0 0 0 4px #333;
+  box-shadow: 0 0 0 2px #333, 0 0 0 4px #7d0fd6;
 }
 
-button[data-type="number"],
-button[data-action="decimal"] {
-  background-color: #EEE;
-  color: #333;
-  width:50px
-
-}
-
-button[data-type="number"]:hover,
-button[data-action="decimal"]:hover {
-  background-color: #DDD;
-}
-
-button[data-type="number"]:focus,
-button[data-action="decimal"]:focus {
-  box-shadow: 0 0 0 2px #333, 0 0 0 4px #EEE;
-}
-
-button[data-operationType] {
-  background-color: #FFC107;
-  width: 50px;
-}
-
-button[data-operationType]:hover {
-  background-color: #FFB300;
-}
-
-button[data-operationType]:focus {
-  box-shadow: 0 0 0 2px #FFF, 0 0 0 4px #FFC107;
-}
 
 #clearButton,
 #delete {
-  background-color: #F44336;
   width: 110px
-  
-}
-
-#clearButton:hover,
-#delete:hover {
-  background-color: #E53935;
-}
-
-#clearButton:focus,
-#delete:focus {
-  box-shadow: 0 0 0 2px #FFF, 0 0 0 4px #F44336;
-}
-
-#equal {
-  background-color: #4CAF50;
-  width: 50px;
-}
-
-#equal:hover {
-  background-color: #388E3C;
-}
-
-#equal:focus {
-  box-shadow: 0 0 0 2px #FFF, 0 0 0 4px #4CAF50;
 }
